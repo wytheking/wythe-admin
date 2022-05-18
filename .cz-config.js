@@ -27,6 +27,8 @@ module.exports = {
     footer: '请输入要关闭的issue（可选）',
     confirmCommit: '确认要使用以上信息提交？（y/n）'
   },
+  // 跳过步骤 进行代码提交的时候就可以略过这些步骤
+  skipQuestions: ['body', 'footer'],
   // 默认长度为 72
   subjectLimit: 72
 }
