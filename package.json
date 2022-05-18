@@ -42,7 +42,7 @@
     ]
   },
   "config": {
-    "commotizen": {
+    "commitizen": {
       "path": "node_modules/cz-customizable"
     }
   }
