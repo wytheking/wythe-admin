@@ -78,13 +78,14 @@ const handlerLogin = () => {
     if (!valid) return
     // 2、触发登录动作
     loading.value = true
-    store.dispatch('user/login', loginForm.value)
-      .then(() => {
+    store.dispatch('user/userLogin', loginForm.value)
+      .then((data) => {
+        console.log(data)
         loading.value = false
         // TODO: 3、进行登录后处理
       })
       .catch(err => {
-        console.log(err)
+        console.error(err)
         loading.value = false
       })
   })

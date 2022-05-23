@@ -9,14 +9,14 @@ export default {
     /**
      * 登录请求动作
      */
-    login (context, userInfo) {
+    userLogin (context, userInfo) {
       const { username, password } = userInfo
       return new Promise((resolve, reject) => {
         login({
-          username,
+          userName: username,
           password: md5(password)
         }).then(data => {
-          resolve()
+          resolve(data)
         }).catch(err => {
           reject(err)
         })
