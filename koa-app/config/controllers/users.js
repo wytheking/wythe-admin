@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken')
 const tools = require('../../public/javascripts/tool')
 
 // 统一设置token有效时间
-const expireTime = '86400s' // 14小时
+const expireTime = '86400s' // 24小时
 
 class usersController {
   /**
@@ -18,10 +18,8 @@ class usersController {
   static async create (ctx) {
     // 接收客服端
     const req = ctx.request.body
-    console.log('请求内容：', req)
     if (req.userName && req.password) {
       const user = await UsersModel.getUser(req.userName)
-      console.log('user---:', user)
       if (user.userName) {
         ctx.response.status = 412
         ctx.body = {
@@ -32,12 +30,8 @@ class usersController {
         try {
           // 创建用户模型
           const ret = await UsersModel.createUser(req)
-          console.log('ret 26行：', ret)
-
           // 使用刚刚创建的用户ID查询用户详情，且返回用户详情信息
           const data = await UsersModel.getUserInfo({ userId: ret.userId })
-          console.log('data 30行：', data)
-
           ctx.response.status = 200
           ctx.body = {
             code: 200,

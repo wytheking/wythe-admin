@@ -80,7 +80,6 @@ const handlerLogin = () => {
     loading.value = true
     store.dispatch('user/userLogin', loginForm.value)
       .then((data) => {
-        console.log(data)
         loading.value = false
         // TODO: 3、进行登录后处理
       })
