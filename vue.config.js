@@ -4,6 +4,16 @@ function resolve (dir) {
 }
 
 module.exports = {
+  // 代理配置 把当前服务器转发（代理）到另一台服务器上
+  devServer: {
+    proxy: {
+      // 当地址中包含 /api 的时候，出发此代理
+      '/api': {
+        target: 'https://www.fastmock.site/mock/153cb475fb4c197651ccf3e10b2953f2/',
+        changeOrigin: true
+      }
+    }
+  },
   chainWebpack (config) {
     // 设置 svg-sprite-loader
     config.module.rules.delete('svg') // 先清除svg默认配置处理
