@@ -1,3 +1,12 @@
 <template>
-  <div>Sidebar</div>
+  <div class="">
+    <h1>占位</h1>
+    <el-scrollbar>
+      <SidebarMenu></SidebarMenu>
+    </el-scrollbar>
+  </div>
 </template>
+
+<script setup>
+import SidebarMenu from './SidebarMenu.vue'
+</script>
