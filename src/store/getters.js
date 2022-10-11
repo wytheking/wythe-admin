@@ -1,3 +1,5 @@
+import variables from '@/styles/variables.modules.scss'
+
 // store state 快捷访问
 const getters = {
   token: state => state.user.token,
@@ -9,7 +11,10 @@ const getters = {
    */
   hasUserInfo: state => {
     return JSON.stringify(state.user.userInfo) !== '{}'
-  }
+  },
+  // 动态css快捷访问
+  cssVar: state => variables,
+  sidebarOpened: state => state.app.sidebarOpened
 }
 
 export default getters

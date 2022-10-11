@@ -1,14 +1,14 @@
 #app {
   .main-container {
     min-height: 100%;
-    transition: margin-left 0.28s;
+    transition: margin-left $sidebarDuration;
     margin-left: $sideBarWidth;
     position: relative;
   }
 
   .sidebar-container {
-    transition: width 0.28s;
-    width: $sideBarWidth !important;
+    transition: width $sidebarDuration;
+    width: $sideBarWidth;
     height: 100%;
     position: fixed;
     top: 0;
@@ -55,6 +55,10 @@
     margin-right: 16px;
   }
 
+  .sub-el-icon {
+    margin-right: 16px;
+  }
+
   .svg-el-icon {
     margin-right: 12px;
     margin-left: -2px;
@@ -82,7 +86,7 @@
   }
 
   .main-container {
-    margin-left: 54px;
+    margin-left: 54px !important;
   }
 
   .submenu-title-noDropdown {
@@ -121,16 +125,15 @@
       }
     }
   }
-  
 
   .el-menu--collapse {
     .el-submenu {
       & > .el-submenu__title {
         & > span {
-          height: 0;
-          width: 0;
-          overflow: hidden;
-          visibility: hidden;
+          height: 40px;
+          width: 100px;
+          // overflow: hidden;
+          // visibility: hidden;
           display: inline-block;
         }
       }
