@@ -5,7 +5,9 @@
       <span>{{ route.meta.title }}</span>
     </template>
     <!-- 循环渲染 -->
-    <sidebar-item v-for="children in route.children" :key="children.path" :route="children"></sidebar-item>
+    <template v-for="children in route.children" :key="children.path">
+      <sidebar-item :route="children"></sidebar-item>
+    </template>
   </el-submenu>
   <el-menu-item v-else :index="route.path">
     <menu-item :icon="route.meta.icon"></menu-item>

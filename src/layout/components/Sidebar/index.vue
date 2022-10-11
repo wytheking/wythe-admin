@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="logo-container">
-      <el-avatar :size="logoHeight" :shape="square" :src="$store.getters.userInfo.avatar"></el-avatar>
+      <el-avatar :size="logoHeight" shape="square" :src="$store.getters.userInfo.avatar"></el-avatar>
       <h1 class="logo-title" v-if="$store.getters.sidebarOpened">wythe-admin</h1>
     </div>
     <el-scrollbar>

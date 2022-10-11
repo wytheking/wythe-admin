@@ -9,11 +9,9 @@
     router
   >
     <!-- 子集 menu 菜单 -->
-    <sidebar-item
-      v-for="item in routes"
-      :key="item.path"
-      :route="item"
-    ></sidebar-item>
+    <template v-for="item in routes" :key="item.path">
+      <sidebar-item :route="item"></sidebar-item>
+    </template>
   </el-menu>
 </template>
 
