@@ -1,5 +1,7 @@
 <template>
-  <div class="">个人中心</div>
+  <div class="">
+    <p>{{ $t('route.profile') }}</p>
+  </div>
 </template>
 
 <script setup>
