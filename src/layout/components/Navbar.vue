@@ -5,6 +5,8 @@
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb-container"></breadcrumb>
     <div class="right-menu">
+      <!-- 页面搜索 -->
+      <header-search class="right-menu-item hover-effect"></header-search>
       <!-- 全屏 -->
       <screenfull class="right-menu-item hover-effect"></screenfull>
       <!-- 主题更换（换肤） -->
@@ -34,13 +36,13 @@
 </template>
 
 <script setup>
-import { } from 'vue'
 import { useStore } from 'vuex'
 import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import LangSelect from '@/components/LangSelect'
 import ThemeSelect from '@/components/ThemeSelect'
 import Screenfull from '@/components/Screenfull'
+import HeaderSearch from '@/components/HeaderSearch'
 
 const store = useStore()
 const logout = () => {
