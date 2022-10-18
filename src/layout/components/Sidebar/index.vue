@@ -31,5 +31,10 @@ const logoHeight = 44
     font-weight: 600;
     white-space: nowrap;
   }
+
+  .el-avatar {
+    --el-avatar-background-color: none;
+    // margin-right: 12px;
+  }
 }
 </style>
