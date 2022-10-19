@@ -5,10 +5,12 @@
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb-container"></breadcrumb>
     <div class="right-menu">
+      <!-- 页面引导 -->
+      <guide class="right-menu-item right-menu-item-guide hover-effect"></guide>
       <!-- 页面搜索 -->
-      <header-search class="right-menu-item hover-effect"></header-search>
+      <header-search class="right-menu-item right-menu-item-search hover-effect"></header-search>
       <!-- 全屏 -->
-      <screenfull class="right-menu-item hover-effect"></screenfull>
+      <screenfull class="right-menu-item right-menu-item-full hover-effect"></screenfull>
       <!-- 主题更换（换肤） -->
       <theme-select class="right-menu-item hover-effect"></theme-select>
       <!-- 国际化设置 -->
@@ -43,6 +45,7 @@ import LangSelect from '@/components/LangSelect'
 import ThemeSelect from '@/components/ThemeSelect'
 import Screenfull from '@/components/Screenfull'
 import HeaderSearch from '@/components/HeaderSearch'
+import Guide from '@/components/Guide'
 
 const store = useStore()
 const logout = () => {
@@ -91,6 +94,15 @@ const logout = () => {
 
       &.hover-effect {
         cursor: pointer;
+      }
+      &.right-menu-item-guide {
+        padding: 0 9px 0 0;
+      }
+      &.right-menu-item-search {
+        padding: 0 9px;
+      }
+      &.right-menu-item-full {
+        padding: 0 18px 0 9px;
       }
     }
 

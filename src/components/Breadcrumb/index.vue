@@ -1,5 +1,5 @@
 <template>
-  <el-breadcrumb class="breadcrumb" separator="/">
+  <el-breadcrumb id="guide-breadcrumb" class="breadcrumb" separator="/">
     <transition-group name="breadcrumb">
       <!-- <el-breadcrumb-item>
         <span class="redirect" @click="onLinkClick('/')">{{ $t('navBar.home') }}</span>
