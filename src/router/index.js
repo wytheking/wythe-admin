@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import layout from '@/layout/index'
+import store from '@/store'
 
 /**
  * 私有路由表
@@ -126,7 +127,8 @@ const publicRoutes = [
         component: () => import('@/views/profile/index'),
         meta: {
           title: 'profile',
-          icon: 'el-icon-user'
+          icon: 'el-icon-user',
+          iconName: 'User'
         }
       },
       // 404
@@ -149,5 +151,21 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [...publicRoutes, ...privateRoutes]
 })
+
+/**
+ * 初始化路由表
+ */
+export function resetRouter () {
+  if (
+    store.getters.userInfo &&
+    store.getters.userInfo.permission &&
+    store.getters.userInfo.permission.menus
+  ) {
+    const menus = store.getters.userInfo.permission.menus
+    menus.forEach((menu) => {
+      router.removeRoute(menu)
+    })
+  }
+}
 
 export default router

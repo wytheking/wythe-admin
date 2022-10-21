@@ -14,7 +14,7 @@ module.exports = {
   ],
   // 解析器
   parserOptions: {
-    parser: '@babel/eslint-parser'
+    parser: 'babel-eslint'
   },
   // 需要修改的启用规则及其各自的错误级别
   /**

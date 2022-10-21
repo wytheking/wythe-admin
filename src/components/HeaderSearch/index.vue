@@ -1,8 +1,10 @@
 <template>
-  <div id="guide-search" class="header-search" :class="{ show: isShow }">
-    <i @click.stop="onShowClick">
-      <svg-icon class-name="search-icon" icon="search"></svg-icon>
-    </i>
+  <div class="header-search" :class="{ show: isShow }">
+    <div @click.stop="onShowClick" class="guide-search" id="guide-search">
+      <el-tooltip :content="$t('navBar.headerSearch')">
+        <i><svg-icon class-name="search-icon" icon="search"></svg-icon></i>
+      </el-tooltip>
+    </div>
     <el-select
       ref="headerSearchSelectRef"
       v-model="search"
@@ -119,8 +121,8 @@ watchSwitchLang(() => {
 <style lang="scss" scoped>
 .header-search {
   font-size: 0 !important;
-  a {
-    vertical-align: middle;
+  .guide-search {
+    display: inline-block;
   }
   ::v-deep .search-icon {
     cursor: pointer;

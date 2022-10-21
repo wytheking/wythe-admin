@@ -1,8 +1,8 @@
 <template>
   <el-dropdown v-bind="$attrs" trigger="click" class="theme" @command="handleSetTheme">
-    <div id="guide-them">
+    <div>
       <el-tooltip :content="$t('navBar.themeChange')">
-        <svg-icon icon="change-theme"></svg-icon>
+        <i><svg-icon icon="change-theme"></svg-icon></i>
       </el-tooltip>
     </div>
     <template #dropdown>

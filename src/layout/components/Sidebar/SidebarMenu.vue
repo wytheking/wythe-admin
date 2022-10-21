@@ -2,16 +2,15 @@
   <el-menu
     :collapse="!$store.getters.sidebarOpened"
     :default-active="activeMenu"
-    :uniqueOpened="true"
     :background-color="$store.getters.cssVar.menuBg"
     :text-color="$store.getters.cssVar.menuText"
     :active-text-color="$store.getters.cssVar.menuActiveText"
+    :unique-opened="true"
+    :collapse-transition="false"
     router
   >
     <!-- 子集 menu 菜单 -->
-    <template v-for="item in routes" :key="item.path">
-      <sidebar-item :route="item"></sidebar-item>
-    </template>
+    <sidebar-item v-for="item in routes" :key="item.path" :route="item"></sidebar-item>
   </el-menu>
 </template>
 

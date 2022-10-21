@@ -127,11 +127,23 @@ $cursor: #fff;
         display: inline-block;
         height: 47px;
         width: 80%;
+        --el-input-border: none;
+        --el-input-hover-border: none;
+        --el-input-focus-border: none;
+        --el-input-transparent-border: 0 0 0 1px transparent inset;
+        --el-input-border-color: none;
+        --el-input-bg-color: none;
+        --el-input-hover-border-color: none;
+        --el-input-clear-hover-color: none;
+        --el-input-focus-border-color: none;
+        .el-input__wrapper {
+          height: 47px;
+          width: 100%;
+          color: $light_gray;
+          caret-color: $cursor;
+        }
 
         input {
-          background-color: transparent;
-          border: none;
-          border-radius: 0px;
           padding: 12px 5px 12px 15px;
           color: $light_gray;
           caret-color: $cursor;
@@ -187,6 +199,10 @@ $cursor: #fff;
     .svg-icon {
       margin-right: 0 !important;
     }
+  }
+
+  .el-button {
+    height: 47px;
   }
 }
 </style>

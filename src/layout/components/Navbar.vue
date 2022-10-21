@@ -12,9 +12,9 @@
       <!-- 全屏 -->
       <screenfull class="right-menu-item right-menu-item-full hover-effect"></screenfull>
       <!-- 主题更换（换肤） -->
-      <theme-select class="right-menu-item hover-effect"></theme-select>
+      <theme-select id="guide-them" class="right-menu-item hover-effect"></theme-select>
       <!-- 国际化设置 -->
-      <lang-select class="right-menu-item hover-effect"></lang-select>
+      <lang-select id="guide-lang" class="right-menu-item hover-effect"></lang-select>
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">

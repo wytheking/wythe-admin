@@ -55,9 +55,9 @@
   //   margin-right: 16px;
   // }
 
-  .sub-el-icon {
-    margin-right: 16px;
-  }
+  // .sub-el-icon {
+  //   margin-right: 16px;
+  // }
 
   .svg-el-icon {
     margin-right: 12px;
@@ -77,6 +77,18 @@
   & .nest-menu .el-submenu > .el-submenu__title,
   & .el-submenu .el-menu-item {
     min-width: $sideBarWidth !important;
+  }
+
+  .el-menu-item [class^=el-icon] {
+    margin-right: 14px;
+    width: 1em;
+    font-size: 16px;
+  }
+}
+
+.el-sub-menu {
+  .svg-icon {
+    margin-right: 16px;
   }
 }
 
@@ -103,6 +115,12 @@
       .sub-el-icon {
         margin-left: 19px;
       }
+    }
+  }
+
+  .el-sub-menu {
+    .svg-icon {
+      margin-right: 0;
     }
   }
 
@@ -152,11 +170,6 @@
   }
 }
 
-.el-sub-menu {
-  .svg-icon {
-    margin-right: 16px;
-  }
-}
 
 .el-menu--vertical {
   & > .el-menu {

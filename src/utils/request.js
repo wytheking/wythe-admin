@@ -2,7 +2,7 @@ import axios from 'axios'
 import store from '@/store'
 import { ElMessage } from 'element-plus'
 import { isCheckTimeout } from '@/utils/auth'
-
+import md5 from 'md5'
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
@@ -11,6 +11,9 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   config => {
+    const { icode, time } = getTestICode()
+    config.headers.icode = icode
+    config.headers.codeType = time
     // 设置token
     if (store.getters.token) {
       // 判断token是否过期 登录超时
@@ -21,6 +24,8 @@ service.interceptors.request.use(
       }
       config.headers.Authorization = `Bearer ${store.getters.token}`
     }
+    // 配置接口国际化
+    config.headers['Accept-Language'] = store.getters.language
     return config
   },
   error => {
@@ -59,5 +64,17 @@ service.interceptors.response.use(
     return Promise.reject(new Error(error.message))
   }
 )
+
+/**
+ * 返回 Icode 的实现
+ */
+function getTestICode () {
+  const now = parseInt(Date.now() / 1000)
+  const code = now + 'LGD_Sunday-1991-12-30'
+  return {
+    icode: md5(code),
+    time: now
+  }
+}
 
 export default service

@@ -10,13 +10,14 @@ module.exports = {
       // 当地址中包含 /api 的时候，出发此代理
       '/api': {
         target: 'https://www.fastmock.site/mock/153cb475fb4c197651ccf3e10b2953f2/',
+        // target: 'https://api.imooc-admin.lgdsunday.club/',
         changeOrigin: true
       }
     }
   },
   chainWebpack (config) {
     // 设置 svg-sprite-loader
-    config.module.rules.delete('svg') // 先清除svg默认配置处理
+    // config.module.rules.delete('svg') // 先清除svg默认配置处理
     config.module
       .rule('svg')
       .exclude.add(resolve('src/icons/svg'))
@@ -24,7 +25,7 @@ module.exports = {
     config.module
       .rule('icons')
       .test(/\.svg$/)
-      .include.add(resolve('src/icons/svg'))
+      .include.add(resolve('src/icons'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')

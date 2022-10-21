@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-tooltip :content="$t('navBar.guide')">
-      <i id="guide-start" @Click="onClick">
+      <i id="guide-start" @click="onClick">
         <svg-icon icon="guide"></svg-icon>
       </i>
     </el-tooltip>

@@ -1,10 +1,10 @@
-import service from '@/utils/request'
+import request from '@/utils/request'
 
 /**
  * 登录
  */
 export const login = data => {
-  return service({
+  return request({
     url: '/sys/login',
     method: 'POST',
     data
@@ -15,8 +15,7 @@ export const login = data => {
  * 获取用户信息
  */
 export const getUserInfo = () => {
-  return service({
-    url: '/sys/profile',
-    method: 'GET'
+  return request({
+    url: '/sys/profile'
   })
 }
