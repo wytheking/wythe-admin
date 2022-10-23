@@ -39,6 +39,7 @@ export default {
     removeTagsView (state, payload) {
       if (payload.type === 'index') {
         state.tagsViewList.splice(payload.index, 1)
+        return
       } else if (payload.type === 'other') {
         state.tagsViewList.splice(
           payload.index + 1,

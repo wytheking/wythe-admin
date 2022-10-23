@@ -6,7 +6,7 @@ export default {
   namespaced: true,
   state: () => ({
     mainColor: getItem(MAIN_COLOR) || DEFAULT_COLOR,
-    variables: variables
+    variables
   }),
   mutations: {
     setMainColor (state, newColor) {

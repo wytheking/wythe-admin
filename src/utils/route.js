@@ -42,7 +42,7 @@ export const generateMenus = (routes, basePath = '') => {
   // 不满足该条件 `meta && meta.title && meta.icon` 的数据不应该存在
   routes.forEach(item => {
     // 不存在 children && 不存在 meta 直接 return
-    if (isNull(item.children) && isNull(item.meta)) return
+    if (isNull(item.meta) && isNull(item.children)) return
     // 存在 children 不存在 meta 迭代generateMenus
     if (isNull(item.meta) && !isNull(item.children)) {
       result.push(...generateMenus(item.children))

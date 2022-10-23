@@ -28,7 +28,7 @@ export default {
       const { username, password } = userInfo
       return new Promise((resolve, reject) => {
         login({
-          userName: username,
+          username,
           password: md5(password)
         }).then(data => {
           // console.log(data)

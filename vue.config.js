@@ -9,8 +9,8 @@ module.exports = {
     proxy: {
       // 当地址中包含 /api 的时候，出发此代理
       '/api': {
-        target: 'https://www.fastmock.site/mock/153cb475fb4c197651ccf3e10b2953f2/',
-        // target: 'https://api.imooc-admin.lgdsunday.club/',
+        // target: 'https://www.fastmock.site/mock/153cb475fb4c197651ccf3e10b2953f2/',
+        target: 'https://api.imooc-admin.lgdsunday.club/',
         changeOrigin: true
       }
     }
@@ -22,6 +22,8 @@ module.exports = {
       .rule('svg')
       .exclude.add(resolve('src/icons/svg'))
       .end()
+    config.resolve.alias
+      .set('vue-i18n', 'vue-i18n/dist/vue-i18n.cjs.js')
     config.module
       .rule('icons')
       .test(/\.svg$/)
